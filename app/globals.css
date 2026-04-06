@@ -4,40 +4,66 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.95 0.01 80);
+  --background: oklch(0.98 0 0);
   --foreground: oklch(0.2 0 0);
-  --card: oklch(0.98 0.005 80);
+  --card: oklch(1 0 0);
   --card-foreground: oklch(0.2 0 0);
-  --popover: oklch(0.98 0.005 80);
+  --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0 0);
-  --primary: oklch(0.2 0 0);
-  --primary-foreground: oklch(0.98 0.005 80);
-  --secondary: oklch(0.55 0.05 230);
-  --secondary-foreground: oklch(0.98 0.005 80);
-  --muted: oklch(0.92 0.01 80);
+  --primary: oklch(0.25 0.04 240);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.92 0.01 80);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.94 0.01 80);
   --muted-foreground: oklch(0.45 0 0);
-  --accent: oklch(0.55 0.05 230);
-  --accent-foreground: oklch(0.98 0.005 80);
+  --accent: oklch(0.55 0.05 150);
+  --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --radius: 0.5rem;
 }
+
+.theme-growth {
+  --primary: #1F2A44;
+  --primary-foreground: #FFFFFF;
+  --accent: #6E866B;
+  --accent-foreground: #FFFFFF;
+  --background: #FFFFFF;
+  --foreground: #1F2A44;
+  --card: #FFFFFF;
+  --card-foreground: #1F2A44;
+  --muted: #E6FEEB;
+  --muted-foreground: #6E866B;
+  --secondary: #c2c1c2;
+  --secondary-foreground: #FFFFFF;
+  --border: #6E866B;
+  --header-bg: #1F2A44;
+  --header-foreground: #FFFFFF;
+  --hero-bg: #FFFFFF;
+  --footer-bg: #1F2A44;
+}
+
+.theme-digital {
+  --primary: #2F4F5A;
+  --primary-foreground: #FFFFFF;
+  --accent: #5F7C8A;
+  --accent-foreground: #FFFFFF;
+  --background: #F3EFEA;
+  --foreground: #2B2B2B;
+  --card: #FFFFFF;
+  --card-foreground: #2F4F5A;
+  --muted: #E0E0E0;
+  --muted-foreground: #5F7C8A;
+  --border: #5F7C8A;
+  --header-bg: #2F4F5A;
+  --header-foreground: #FFFFFF;
+  --hero-bg: #F3EFEA;
+  --footer-bg: #2B2B2B;
+}
+
 
 .dark {
   --background: oklch(0.145 0 0);
@@ -76,7 +102,7 @@
 
 @theme inline {
   --font-sans: var(--font-sans), 'Inter', system-ui, sans-serif;
-  --font-serif: var(--font-serif), 'Playfair Display', Georgia, serif;
+  --font-serif: var(--font-serif), 'Outfit', system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -97,23 +123,15 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  /* Custom brand colors extensions */
+  --color-header-bg: var(--header-bg);
+  --color-header-foreground: var(--header-foreground);
+  --color-hero-bg: var(--hero-bg);
+  --color-footer-bg: var(--footer-bg);
 }
 
 html {

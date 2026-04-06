@@ -21,52 +21,55 @@ export function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <a href="#" className="flex items-center gap-2">
-          <div className="flex items-center gap-1">
-            <span className="text-xl font-light tracking-tight">M</span>
-            <span className="text-xl">|</span>
+    <header className="sticky top-0 z-50 w-full border-b border-border/10 bg-header-bg text-header-foreground transition-colors duration-300">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
+        <a href="#" className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 grayscale brightness-200">
+            <span className="text-2xl font-light tracking-tight">M</span>
+            <span className="text-2xl font-thin">|</span>
           </div>
-          <span className="font-serif text-xl tracking-wide">Management Pyme</span>
+          <div className="flex flex-col">
+            <span className="font-serif text-lg leading-none tracking-wider uppercase">Management</span>
+            <span className="font-sans text-[10px] tracking-[0.2em] uppercase opacity-70">Pyme Academia</span>
+          </div>
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+              className="text-xs font-semibold tracking-widest uppercase opacity-80 hover:opacity-100 transition-all hover:-translate-y-px"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" className="hidden md:inline-flex">
+        <div className="flex items-center gap-4">
+          <Button variant="ghost" size="icon" className="hidden md:inline-flex text-header-foreground hover:bg-white/10">
             <Search className="h-5 w-5" />
             <span className="sr-only">Buscar</span>
           </Button>
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <Menu className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="md:hidden text-header-foreground hover:bg-white/10">
+                <Menu className="h-6 w-6" />
                 <span className="sr-only">Abrir menú</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-card p-0">
+            <SheetContent side="right" className="w-[300px] bg-header-bg text-header-foreground border-l border-white/10 p-0">
               <div className="flex flex-col h-full">
-                <div className="p-6 border-b border-border">
-                  <span className="font-serif text-lg tracking-wide">Management Pyme</span>
+                <div className="p-8 border-b border-white/10">
+                  <span className="font-serif text-xl tracking-wider uppercase">Management Pyme</span>
                 </div>
-                <nav className="flex flex-col p-6">
+                <nav className="flex flex-col p-8 gap-4">
                   {navItems.map((item) => (
                     <a
                       key={item.label}
                       href={item.href}
-                      className="py-3 text-base font-medium text-foreground hover:text-muted-foreground transition-colors border-b border-border/50 last:border-0"
+                      className="py-4 text-sm font-bold tracking-widest uppercase border-b border-white/5 last:border-0 hover:pl-2 transition-all"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.label}
@@ -79,5 +82,6 @@ export function Header() {
         </div>
       </div>
     </header>
+
   )
 }

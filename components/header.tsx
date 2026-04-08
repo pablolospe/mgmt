@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X, Search } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -47,11 +47,6 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button variant="ghost" size="icon" className="hidden md:inline-flex text-header-foreground hover:bg-white/10">
-            <Search className="h-5 w-5" />
-            <span className="sr-only">Buscar</span>
-          </Button>
-
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden text-header-foreground hover:bg-white/10">

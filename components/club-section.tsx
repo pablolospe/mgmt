@@ -1,64 +1,80 @@
 import Image from "next/image"
+import { Users2, MessageSquare, Target, Zap } from "lucide-react"
 
 const clubFeatures = [
   {
-    title: "Networking para",
-    description: "Promociona tu empresa y haz contactos de negocios con otros miembros.",
+    title: "Conversación estructurada",
+    description: "Espacios diseñados para el intercambio profundo de ideas y soluciones entre pares.",
+    icon: MessageSquare
   },
   {
-    title: "Foro de Discusión",
-    description: "Comparte conocimientos y resuelve dudas profesionales con la comunidad.",
+    title: "Casos reales",
+    description: "Análisis de situaciones concretas que enfrentan dueños de Pymes en su día a día.",
+    icon: Target
   },
   {
-    title: "Foruoe Ekolecioi",
-    description: "Programa para ayudar a los Miércoles que hay en tu management.",
+    title: "Mirada estratégica compartida",
+    description: "Perspectivas diversas que enriquecen tu toma de decisiones y amplían tu visión.",
+    icon: Users2
   },
   {
-    title: "Fenotiaig Pymes",
-    description: "Control de gestión estratégico y de calidad con el asesor de negocios parlante.",
-  },
-  {
-    title: "Foro de Discusión",
-    description: "Información de gestión y análisis profesional completo.",
-  },
-  {
-    title: "Cutori va Perlevens",
-    description: "Dil fregolero del verpai de el tay rogo de la fundación.",
-  },
+    title: "Acompañamiento continuo",
+    description: "No estás solo ante el desafío; la comunidad y los mentores te respaldan constantemente.",
+    icon: Zap
+  }
 ]
 
 export function ClubSection() {
   return (
-    <section id="club" className="relative py-16 md:py-24">
+    <section id="club" className="relative py-24 overflow-hidden min-h-svh flex flex-col justify-center">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=80"
-          alt="Reunión empresarial"
+          src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1200&q=80"
+          alt="Comunidad de empresarios"
           fill
-          className="object-cover"
+          className="object-cover grayscale opacity-20"
         />
-        <div className="absolute inset-0 bg-secondary/85" />
+        <div className="absolute inset-0 bg-linear-to-b from-background via-background/95 to-background" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-secondary-foreground mb-12">
-          Club de Empresarios
-        </h2>
+        <div className="max-w-3xl mb-16">
+          <h3 className="text-xs font-bold tracking-[0.4em] uppercase text-accent mb-8">El Club</h3>
+          <h2 className="font-serif text-4xl md:text-6xl text-foreground leading-tight tracking-tighter mb-8">
+            Pensar la Pyme acompañado cambia la <br />
+            <span className="italic">calidad de tus decisiones.</span>
+          </h2>
+          <p className="text-xl text-foreground/60 leading-relaxed">
+            Una comunidad de dueños y líderes que comparten experiencias reales, desafíos concretos y análisis estratégico. No es networking superficial; es intercambio genuino.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {clubFeatures.map((feature, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur-md border border-white/20 rounded-sm p-6 hover:bg-white/15 transition-colors"
+              className="group p-8 bg-secondary/5 border border-foreground/5 rounded-sm hover:bg-accent/5 hover:border-accent/20 transition-all duration-500"
             >
-              <h3 className="text-lg font-semibold text-secondary-foreground mb-2">
+              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <feature.icon className="w-6 h-6 text-accent" />
+              </div>
+              <h3 className="text-2xl font-serif text-foreground mb-4">
                 {feature.title}
               </h3>
-              <p className="text-sm text-secondary-foreground/80 leading-relaxed">
+              <p className="text-foreground/60 leading-relaxed">
                 {feature.description}
               </p>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-16 text-center">
+          <p className="text-sm font-bold tracking-widest uppercase text-foreground/40 mb-8">
+            Para quienes toman decisiones y saben que hacerlo solos limita la perspectiva.
+          </p>
+          <button className="bg-foreground text-background px-8 py-4 rounded-full font-bold hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer">
+            Ser parte del club
+          </button>
         </div>
       </div>
     </section>

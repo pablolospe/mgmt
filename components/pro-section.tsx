@@ -1,49 +1,66 @@
-import { BarChart3, CalendarCheck, Award } from "lucide-react"
-
-const proFeatures = [
-  {
-    icon: BarChart3,
-    title: "Análisis de Datos",
-    description: "Análisis abarcadores de herramientas con soporte en el centro.",
-  },
-  {
-    icon: CalendarCheck,
-    title: "Certificaciones Profesionales",
-    description: "Obtén certificaciones reconocidas para tu carrera.",
-  },
-  {
-    icon: Award,
-    title: "Certificaciones Profesionales",
-    description: "Alcanza el reconocimiento profesional que mereces.",
-  },
-]
+import { Search, BarChart, Settings, CheckCircle } from "lucide-react"
 
 export function ProSection() {
   return (
-    <section id="pro" className="py-16 md:py-24 bg-card">
+    <section id="pro" className="py-24 bg-foreground text-background min-h-svh flex flex-col justify-center">
       <div className="container mx-auto px-4">
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-foreground mb-4">
-          PRO
-        </h2>
-        <p className="text-muted-foreground max-w-lg mb-12 leading-relaxed">
-          Soluciones avanzadas para empresas. Optimiza tus procesos y escala 
-          tu empresa con nuestras herramientas profesionales.
-        </p>
+        <div className="max-w-4xl mb-24">
+          <h3 className="text-xs font-bold tracking-[0.4em] uppercase text-accent mb-8">Pro</h3>
+          <h2 className="font-serif text-4xl md:text-6xl mb-8 leading-tight tracking-tighter">
+            Acompañamiento estratégico para <br />
+            <span className="italic opacity-50">Pymes en crecimiento.</span>
+          </h2>
+          <p className="text-xl text-background/60 leading-relaxed italic border-l-2 border-accent pl-8">
+            "Cuando la empresa crece, el modelo inicial deja de alcanzar. Para transformar el sistema de una empresa, primero deben transformarse quienes toman las decisiones."
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {proFeatures.map((feature, index) => (
-            <div key={index} className="text-center">
-              <div className="flex justify-center mb-4">
-                <feature.icon className="w-16 h-16 text-foreground stroke-1" />
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
+          <div>
+            <h4 className="text-sm font-bold uppercase tracking-widest text-accent mb-10">Qué abordamos</h4>
+            <div className="space-y-12">
+              {[
+                { t: "Diagnóstico estratégico", d: "Entendemos dónde estás y hacia dónde realmente puede ir tu negocio." },
+                { t: "Organización interna", d: "Estructuramos la empresa para que soporte el crecimiento sin colapsar." },
+                { t: "Procesos y roles", d: "Clarificamos quién hace qué y cómo para eliminar cuellos de botella." },
+                { t: "Decisiones estructurales", d: "Te acompañamos en los movimientos que definen el futuro de la Pyme." }
+              ].map((item, i) => (
+                <div key={i} className="group">
+                  <h5 className="text-2xl font-serif mb-2 group-hover:text-accent transition-colors">{item.t}</h5>
+                  <p className="text-background/50 leading-relaxed">{item.d}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <div className="bg-background/5 p-8 md:p-12 border border-background/10 rounded-sm self-start">
+            <h4 className="text-sm font-bold uppercase tracking-widest text-accent mb-10">Cómo trabajamos</h4>
+            <div className="space-y-10">
+              {[
+                { icon: Search, t: "Escuchamos y entendemos", d: "No venimos con soluciones enlatadas." },
+                { icon: BarChart, t: "Analizamos la situación real", d: "Datos y hechos por sobre las suposiciones." },
+                { icon: Settings, t: "Proponemos acciones concretas", d: "Ejecutables desde el primer día." },
+                { icon: CheckCircle, t: "Acompañamos la implementación", d: "Estamos ahí hasta que el cambio se materializa." }
+              ].map((step, i) => (
+                <div key={i} className="flex gap-6">
+                  <div className="shrink-0 w-10 h-10 rounded-full border border-background/20 flex items-center justify-center">
+                    <step.icon className="w-5 h-5 text-accent" />
+                  </div>
+                  <div>
+                    <h5 className="font-bold mb-1">{step.t}</h5>
+                    <p className="text-sm text-background/50">{step.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-12 pt-12 border-t border-background/10">
+               <p className="text-background/80 font-bold mb-6">No entregamos informes. Trabajamos hasta que el cambio se materializa.</p>
+               <button className="w-full py-4 bg-accent text-accent-foreground font-bold rounded-full hover:bg-accent/90 transition-colors cursor-pointer">
+                 Necesito acompañamiento estratégico
+               </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

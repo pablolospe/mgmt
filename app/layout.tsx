@@ -15,8 +15,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Management Pyme - Academia y Club de Empresarios',
-  description: 'Únete a nuestra comunidad de empresarios exitosos. Accede a recursos exclusivos, networking y apoyo para crecer tu negocio.',
+  title: 'Management Pyme - Pensamiento, orden y gestión para empresas reales.',
+  description: 'El liderazgo consciente es el verdadero motor de transformación de una empresa. Impulsa una visión estratégica con impacto real y sostenible en tu Pyme.',
 }
 
 export default function RootLayout({
